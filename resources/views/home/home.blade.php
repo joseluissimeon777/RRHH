@@ -10,10 +10,15 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">{{$item->nombre}}</div>
 
-                <div class="panel-body">
-                {{$item->descripcion}}
+                <div class="panel-body" name="panelItem" >
+                    <?php
+                    echo $item->descripcion;
+                    ?>
 
-                 </div>
+                </div>
+
+
+
                 <div class="panel-footer">
 
                     {{Form::open(['url'=>'home/edit','method'=>'GET'])}}
@@ -21,7 +26,7 @@
                     {!!Form::submit('Editar',['class'=>'btn btn-block'])!!}
 
 
-                    </div>
+                </div>
 
             </div>
          @endforeach

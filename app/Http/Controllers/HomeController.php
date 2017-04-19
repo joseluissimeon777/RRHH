@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Repositories\HomeRepository;
 use App\Http\Requests\UpdateHomeRequest;
+use Flash;
+
 class HomeController extends Controller
 {
 
@@ -30,10 +32,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-
      $Items =App\home::all();
      return view('home.home')->with('items',$Items);
-
     }
 
     public function edit()
@@ -62,32 +62,20 @@ class HomeController extends Controller
             $home = App\Home::all()->find($id);
             $home->descripcion = $_REQUEST['descripcion'];
 
-             $home->save();
-             return $this->index();
+            $home->save();
 
+            Flash::success('Datos guardados exitasamente.');
+            return redirect(url('/home'));
 
-                    }
+        }else{
 
+            Flash::error('Error al guardar');
+            return redirect(url('/home'));
 
-
-  $request->all();
-
+        }
 
     }
 
-
-
-
-    public function store(CreateEmpleadosRequest $request)
-    {
-        $input = $request->all();
-
-       // $homes = $this->empleadosRepository->create($input);
-
-        Flash::success('Cambios exitosos');
-
-        return redirect(route('home.index'));
-    }
 
 
 

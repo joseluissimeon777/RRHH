@@ -17,7 +17,8 @@
                     <div class="form-group col-sm-12 col-lg-12">
                         {{Form::hidden('id',$item->id)}}
                         {!! Form::label('desc', 'Descripcion:') !!}
-                        {!! Form::textarea('descripcion',$item->descripcion, ['class' => 'form-control']) !!}
+                        {!! Form::textarea('descripcion',$item->descripcion,['class' => 'form-control ckeditor']) !!}
+
 
                     </div>
 
@@ -33,4 +34,5 @@
             </div>
         </div>
     </div>
+
 @endsection

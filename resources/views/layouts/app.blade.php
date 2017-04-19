@@ -18,7 +18,17 @@
         window.Laravel =<?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
+
+
+        function tranform ( x ){
+          var y =x;
+            alert('Resultado : '+ y);
+
+        }
+
+
     </script>
+    <script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 </head>
 <body>
     <div id="app">
@@ -95,6 +105,8 @@
     </div>
 
     <!-- Scripts -->
+    <script src="{{ asset('asset/vendor/ckeditor/ckeditor.js') }}"></script>
+
     <script src="/js/app.js"></script>
 </body>
 </html>

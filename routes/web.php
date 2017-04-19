@@ -27,3 +27,5 @@ Route::get('/home/edit', 'HomeController@edit');
 
 
 Route::patch('/home/update','HomeController@update');
+
+Route::patch('home.update' , 'HomeController@update');
